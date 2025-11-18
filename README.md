@@ -16,7 +16,8 @@ nvm install 20
 nvm use 20
 ```
 
-7. Corra o servidor de desenvolvimento:
+7. instale as dependencias com `com install`
+8. Corra o servidor de desenvolvimento:
 
 ```bash
 npm run dev
