@@ -9,7 +9,7 @@ export default function Preferida({tecnologia}:PreferidaProps) {
 
     // Estados
     const [likes, setLikes] = useState(() => {
-        const storedLikes = localStorage.getItem('likes')||'0'
+        const storedLikes = localStorage.getItem(tecnologia)||'0'
         return parseInt(storedLikes)
     })
 
