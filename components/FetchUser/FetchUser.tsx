@@ -9,7 +9,7 @@ export default function FetchUser() {
 
     //
     // A. Fetch de dados
-    const { data, error } = useSWR<User>('https://jsonplaceholder.typicode.com/users/1', fetcher);
+    const { data, error, isLoading } = useSWR<User>('https://jsonplaceholder.typicode.com/users/1', fetcher);
 
     // data → resultado da API
     // error → captura de erro
@@ -20,7 +20,8 @@ export default function FetchUser() {
     // 
     // B. Renderização
     if (error) return <p>Erro ao carregar</p>;
-    if (!data) return <p>Carregando...</p>;
+    if (isLoading) return <p>Carregando...</p>
+    if(!data) return <p>Sem utilizadores</p>
 
     return <section className="bg-blue-300 p-2 pb-4 mt-6 rounded-xl">
 
